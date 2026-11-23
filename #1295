@@ -1,0 +1,26 @@
+public class Main {
+    public static void main(String[] args) {
+        int[] nums = {12, 345, 2, 6, 7896};
+
+        Solution solution = new Solution();
+        int result = solution.findNumbers(nums);
+
+        System.out.println(result); // Output: 2
+    }
+}
+
+class Solution {
+    public int findNumbers(int[] nums) {
+        int count = 0;
+
+        for (int number : nums) {
+            int digits = String.valueOf(number).length();
+
+            if (digits % 2 == 0) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
