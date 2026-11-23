@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+        String[] sentences = {
+            "alice and bob love leetcode",
+            "i think so too",
+            "this is great thanks very much"
+        };
+
+        Solution solution = new Solution();
+        int result = solution.mostWordsFound(sentences);
+
+        System.out.println(result); // Output: 6
+    }
+}
+
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+        int maximum = 0;
+
+        for (String sentence : sentences) {
+            int wordCount = sentence.split(" ").length;
+            maximum = Math.max(maximum, wordCount);
+        }
+
+        return maximum;
+    }
+}
